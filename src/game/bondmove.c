@@ -902,6 +902,14 @@ void bmoveProcessInput(bool allowc1x, bool allowc1y, bool allowc1buttons, bool i
 							}
 						} else {
 							for (i = 0; i < numsamples; i++) {
+								if (joyGetButtonsPressedOnSample(i, contpad1, c1allowedbuttons & Y_BUTTON)) {
+											movedata.weaponforwardoffset++;
+											g_Vars.currentplayer->invdowntime = -1;	
+								} else
+								if (joyGetButtonsPressedOnSample(i, contpad1, c1allowedbuttons & X_BUTTON)) {
+											movedata.weaponbackoffset++;
+											g_Vars.currentplayer->invdowntime = -1;	
+								} else
 								if (joyGetButtonsOnSample(i, contpad1, c1allowedbuttons & A_BUTTON)
 										|| joyGetButtonsOnSample(i, contpad2, c2allowedbuttons & A_BUTTON)) {
 									if (g_Vars.currentplayer->invdowntime > -2) {
@@ -1274,6 +1282,14 @@ void bmoveProcessInput(bool allowc1x, bool allowc1y, bool allowc1buttons, bool i
 							}
 						} else {
 							for (i = 0; i < numsamples; i++) {
+								if (joyGetButtonsPressedOnSample(i, contpad1, c1allowedbuttons & Y_BUTTON)) {
+											movedata.weaponforwardoffset++;
+											g_Vars.currentplayer->invdowntime = -1;	
+								} else
+								if (joyGetButtonsPressedOnSample(i, contpad1, c1allowedbuttons & X_BUTTON)) {
+											movedata.weaponbackoffset++;
+											g_Vars.currentplayer->invdowntime = -1;	
+								} else
 								if (joyGetButtonsOnSample(i, contpad1, invbuttons & c1allowedbuttons)) {
 									if (g_Vars.currentplayer->invdowntime > -2) {
 										if (joyGetButtonsPressedOnSample(i, contpad1, shootbuttons & c1allowedbuttons)) {
