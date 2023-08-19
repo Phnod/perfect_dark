@@ -70,14 +70,14 @@ struct aibotweaponpreference g_AibotWeaponPreferences[] = {
 	/*0x21*/ { 40,  176, 0,   0,   0, 0, BOTDISTCFG_THROWEXPLOSIVE, BOTDISTCFG_DEFAULT,        5,             5,   1,  1,  1, 0 }, // WEAPON_PROXIMITYMINE
 	/*0x22*/ { 44,  156, 0,   0,   1, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        5,             5,   2,  2,  1, 0 }, // WEAPON_REMOTEMINE
 	/*0x23*/ { 8,   8,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_COMBATBOOST
-	/*0x24*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_PP9I
-	/*0x25*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_CC13
-	/*0x26*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_KL01313
-	/*0x27*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_KF7SPECIAL
-	/*0x28*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_ZZT
-	/*0x29*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_DMC
-	/*0x2a*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_AR53
-	/*0x2b*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_RCP45
+	/*0x24*/ { 56,  60,  84,  88,  1, 1, BOTDISTCFG_PISTOL,         BOTDISTCFG_CLOSE,          30,            0,   10, 0,  1, 0 }, // WEAPON_PP9I
+	/*0x25*/ { 56,  60,  80,  88,  1, 1, BOTDISTCFG_PISTOL,         BOTDISTCFG_CLOSE,          30,            0,   10, 0,  1, 0 }, // WEAPON_CC13
+	/*0x26*/ { 14,  14,  14,  14,  1, 1, BOTDISTCFG_PISTOL,         BOTDISTCFG_CLOSE,          30,            0,   20, 0,  1, 0 }, // WEAPON_KL01313
+	/*0x27*/ { 128, 152, 0,   0,   1, 1, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        100,           0,   30, 0,  1, 0 }, // WEAPON_KF7SPECIAL
+	/*0x28*/ { 122, 128, 132, 140, 1, 1, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        100,           0,   30, 0,  1, 0 }, // WEAPON_ZZT
+	/*0x29*/ { 112, 124, 132, 148, 1, 1, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        100,           0,   30, 0,  1, 0 }, // WEAPON_DMC
+	/*0x2a*/ { 152, 176, 0,   0,   1, 1, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        100,           0,   30, 0,  1, 0 }, // WEAPON_AR53
+	/*0x2b*/ { 168, 184, 0,   0,   1, 1, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        150,           0,   50, 0,  1, 0 }, // WEAPON_RCP45
 	/*0x2c*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_PSYCHOSISGUN
 	/*0x2d*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_NIGHTVISION
 	/*0x2e*/ { 0,   0,   0,   0,   0, 0, BOTDISTCFG_DEFAULT,        BOTDISTCFG_DEFAULT,        0,             0,   0,  0,  1, 0 }, // WEAPON_EYESPY
