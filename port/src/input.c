@@ -42,12 +42,12 @@ void inputSetDefaultKeyBinds(void)
 {
 	// TODO: make VK constants for all these
 	static const u32 kbbinds[][3] = {
-		{ CK_A,          SDL_SCANCODE_Q,      0                   },
-		{ CK_B,          SDL_SCANCODE_E,      0                   },
-		{ CK_X,          SDL_SCANCODE_TAB,    0                   },
-		{ CK_Y,          SDL_SCANCODE_R,      0                   },
+		{ CK_A,          SDL_SCANCODE_E,      0                   },
+		{ CK_B,          SDL_SCANCODE_F,      SDL_SCANCODE_Q      },
+		{ CK_X,          VK_MOUSE_X1,         VK_MOUSE_WHEEL_UP   },
+		{ CK_Y,          VK_MOUSE_X2,         VK_MOUSE_WHEEL_DN   },
 		{ CK_RTRIG,      VK_MOUSE_RIGHT,      SDL_SCANCODE_Z      },
-		{ CK_LTRIG,      VK_MOUSE_X1,         SDL_SCANCODE_X      },
+		{ CK_LTRIG,      VK_MOUSE_MIDDLE,     SDL_SCANCODE_X      },
 		{ CK_ZTRIG,      VK_MOUSE_LEFT,       SDL_SCANCODE_SPACE  },
 		{ CK_START,      SDL_SCANCODE_RETURN, 0                   },
 		{ CK_DPAD_D,     SDL_SCANCODE_S,      0                   },
