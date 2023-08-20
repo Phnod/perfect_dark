@@ -8,9 +8,10 @@
 #include "platform.h"
 #include "data.h"
 #include "bss.h"
+#include "game/setuputils.h"
+#include "game/texdecompress.h"
 #include "preprocess.h"
 #include "romdata.h"
-#include "game/setuputils.h"
 
 static inline f32 swapF32(f32 x) { *(u32 *)&x = PD_BE32(*(u32 *)&x); return x; }
 static inline u32 swapU32(u32 x) { return PD_BE32(x); }
@@ -1050,6 +1051,13 @@ void preprocessModel(u8 *base, u32 ofs)
 		struct textureconfig *texconfigs = PD_PTR_BASEOFS(mdl->texconfigs, base, ofs);
 		for (s16 i = 0; i < mdl->numtexconfigs; ++i) {
 			PD_SWAP_VAL(texconfigs[i].texturenum);
+			if ((texconfigs[i].texturenum & 0xf000000) == 0x5000000) {
+				// embedded texture; we need to unswizzle this
+				u8 *texdata = PD_PTR_BASEOFS(texconfigs[i].texturenum, base, ofs);
+				// figure out the format and unswizzle
+				const s32 format = texConfigToFormat(&texconfigs[i]);
+				texSwapAltRowBytesInternal(texdata, texconfigs[i].width, texconfigs[i].height, format);
+			}
 		}
 	}
 
@@ -1307,14 +1315,18 @@ void preprocessBgSection1(u8 *data, u32 ofs) {
 		++numportals;
 	}
 
+	s32 maxbatchnum = 0;
 	for (s32 i = 0; i < numportals; ++i) {
 		PD_SWAP_VAL(portals[i].verticesoffset);
 		PD_SWAP_VAL(portals[i].roomnum1);
 		PD_SWAP_VAL(portals[i].roomnum2);
+		if (portals[i].verticesoffset > maxbatchnum) {
+			maxbatchnum = portals[i].verticesoffset;
+		}
 	}
 
 	uintptr_t pvoffset = sizeof(portals[0]) * (numportals + 1);
-	for (s32 i = 0; i < numportals; i++) {
+	for (s32 i = 1; i <= maxbatchnum; i++) {
 		struct portalvertices *pverts = PD_PTR_BASE(pvoffset, portals);
 		for (u32 j = 0; j < pverts->count; ++j) {
 			PD_SWAP_VAL(pverts->vertices[j]);
