@@ -6591,7 +6591,7 @@ bool chrHasLosToProp(struct chrdata *chr, struct prop *prop)
 	bool result;
 
 	propSetPerimEnabled(prop, false);
-	result = chrHasLosToPosWasteful(chr, &prop->pos, prop->rooms);
+	result = chrHasLosToPos(chr, &prop->pos, prop->rooms);
 	propSetPerimEnabled(prop, true);
 
 	return result;
