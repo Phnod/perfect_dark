@@ -656,6 +656,16 @@ void amAssignWeaponSlots(void)
 	u8 weaponnum;
 	s32 i;
 	s32 j;
+	s32 k;
+	s32 gadgetIndex = 0;
+
+	for (i = 0; i < numitems; i++) {
+		weaponnum = invGetWeaponNumByIndex(i);
+		if (weaponnum >= WEAPON_NIGHTVISION) {
+			gadgetIndex = i;
+			break;
+		}
+	}
 
 	g_AmMenus[g_AmIndex].numitems = numitems;
 
@@ -666,7 +676,8 @@ void amAssignWeaponSlots(void)
 	}
 
 	// Assign favourites
-	for (i = 0; i < numitems; i++) {
+	for (k = 0; k < numitems; k++) {
+		i = (k + gadgetIndex) % numitems;
 		weaponnum = invGetWeaponNumByIndex(i);
 
 		if ((weaponnum >= WEAPON_UNARMED && weaponnum <= WEAPON_DISGUISE41)
@@ -688,7 +699,9 @@ void amAssignWeaponSlots(void)
 
 	// If there are still unused slots, fill the remaining slots in inventory
 	// order with unfavourited weapons.
-	for (i = 0; i < numitems; i++) {
+	for (k = 0; k < numitems; k++) {
+	//for (i = numitems - 1; i >= 0; i--) {
+		i = (k + gadgetIndex) % numitems;
 		bool isfavourited = false;
 
 		for (j = 0; j < ARRAYCOUNT(g_AmMenus[g_AmIndex].invindexes); j++) {

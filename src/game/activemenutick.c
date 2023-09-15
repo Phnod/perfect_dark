@@ -33,10 +33,10 @@ void amTick(void)
 			// empty
 		}
 
-		if (g_Vars.normmplayerisrunning == false
-				&& invGetCount() != g_AmMenus[g_AmIndex].numitems) {
-			amAssignWeaponSlots();
-		}
+		//if (g_Vars.normmplayerisrunning == false
+		//		&& invGetCount() != g_AmMenus[g_AmIndex].numitems) {
+		//	amAssignWeaponSlots();
+		//}
 
 		if (g_Vars.currentplayer->activemenumode != AMMODE_CLOSED) {
 			s32 controlmode = optionsGetControlMode(g_Vars.currentplayerstats->mpindex);
